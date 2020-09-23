@@ -44,6 +44,9 @@ public class Application {
         DbManager dbManager;
         try {
             dbManager = new DbManager();
+            dbManager.setUrl(url);
+            dbManager.setUserName(userName);
+            dbManager.setPassword(password);
         } catch (DAOException e) {
             throw new ApplicationException("Не удалось установить соединение с БД. "+e.getMessage());
         }
